@@ -1,9 +1,10 @@
 
+
 image_size = 64;
 num_params = 12*3;
 num_images_per_set = 3;
 
-vertexnow = zeros(12327,3,7627);
+vertexnow = zeros(12327,3,7547);
 
 
 disp('Load training data...');
@@ -29,9 +30,6 @@ layers = [ ...
     convolution2dLayer(3,32)
     reluLayer
     
-    %crossChannelNormalizationLayer(1, 'K', 1)
-  % maxPooling2dLayer(2,'Stride',1)
-    
 
 
     fullyConnectedLayer(num_params*4)
@@ -40,11 +38,8 @@ layers = [ ...
     regressionLayer];
 
 
-% options = trainingOptions('sgdm','InitialLearnRate',0.000001, ...
-%     'MaxEpochs',150);
-
 options = trainingOptions('sgdm',...
-      'InitialLearnRate', 0.005, ...  %0.005
+      'InitialLearnRate', 0.005, ...  
       'LearnRateSchedule','piecewise',...
       'LearnRateDropFactor',0.4,... 
       'LearnRateDropPeriod',13,... 
@@ -56,30 +51,27 @@ options = trainingOptions('sgdm',...
   
 % training network
 disp('Training network...');
-net = trainNetwork(trainImages_concat31(:,:,1,1:num_frames),trainParam_normalized15_1(1:1:num_frames,1:num_params),layers,options);
-%  
+net = trainNetwork(trainImages_concat35(:,:,1,1:num_frames),trainParam_normalized15_1(1:1:num_frames,1:num_params),layers,options);
 
 
 
 
 %% testing network
 
-% test_data_range = 5260:50:5770; %5360:100:5970;
-test_data_range = 5970;%5970;%5390:5390;%5260:50:5770; %5360:100:5970;
-% testImages = zeros(image_size*3,image_size,1,1);
-% loading test data
+test_data_range = 7547;
+
 testImages = trainImages_concat31(:,:,1,1:36:test_data_range*36);
 
 
-% testImages = testImages_concat31(:,:);
+
 testParams = trainParams15_mod(1:test_data_range,1:num_params);
-% [testImages,~,testParams] = digitTest4DArrayData;
- net1 = load('./checkpoint/gg8_more_sim_fit.mat'); %supernet_3images.mat
+
+net1 = load('./checkpoint/gg8_more_sim_fit.mat'); %Provide path to your trianed model
 disp('stage reached');
 
 
 predictedParams = predict(net1.net,testImages);
-%  predictedParams = predict(net,testImages);
+
 for i = 1:size(predictedParams,1)
     
     for j = 1:size(predictedParams,2)
@@ -156,3 +148,4 @@ elseif info.State == "iteration"
 end
 
 end
+
