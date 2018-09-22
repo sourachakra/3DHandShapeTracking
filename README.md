@@ -3,7 +3,7 @@
 The MATLAB code here is for the paper "Deep Multi-view 3D Hand-Shape Tracking" currently in submission. MATLAB 2017b was used
 for implemeting this code.
 
-Prior to using this software, please download the 'vertex_data3.txt' file from the link: 
+Prior to using this software, please download the 'vertex_data3.txt' file from the link and place in the root directory: 
 
 https://drive.google.com/file/d/1dc2lzlr1m5eiwXTqoGWv8yC6cztuC_KQ/view?usp=sharing
 
