@@ -1,4 +1,4 @@
-num_frames = num_data*3; %7627*3; %5970*36;%5970;
+num_frames = num_data*3; %7627*3; 
 num_images_per_set = 3; %3
 image_size = 64; %84
 disp('Preparing images...');
