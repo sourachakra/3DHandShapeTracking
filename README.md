@@ -2,9 +2,13 @@
 
 The MATLAB code here is for the paper "Deep Multi-view 3D Hand-Shape Tracking" currently in submission.
 
-Prior to using this software, please download the 'vertex_data3.txt' file and 'all_stls.zip' files from the link: 
+Prior to using this software, please download the 'vertex_data3.txt' file from the link: 
 
 https://drive.google.com/file/d/1dc2lzlr1m5eiwXTqoGWv8yC6cztuC_KQ/view?usp=sharing
+
+Download 'all_stls.zip' file from the following link:
+
+
 
 Unzip 'all_stls.zip' and place the folder into the root directory.
 
