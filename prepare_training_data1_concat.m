@@ -10,11 +10,10 @@ for i = 1:1:num_frames
     if mod(i,100) == 0
         i
     end
-     dir_list = dir(['D:/souradeep/CLAPV1.0/binary_silhouettes_newmod12/silhouette_' num2str(i+240) '_binary/*.png']);
+     dir_list = dir(['D:/souradeep/CLAPV1.0/binary_silhouettes_newmod12/silhouette_' num2str(i+240) '_binary/*.png']); % Provide path to the generated silhouettes
 
         for j = 1:num_images_per_set
-%             j
-%             ['D:/souradeep/CLAPV1.0/binary_silhouettes_newmod12/silhouette_' num2str(i) '_binary/' dir_list(j).name]
+
               im = imread(['D:/souradeep/CLAPV1.0/binary_silhouettes_newmod12/silhouette_' num2str(i+240) '_binary/' dir_list(j).name]);
               if ndims(im) == 3
                     grayim = rgb2gray(im);
@@ -31,8 +30,7 @@ for i = 1:1:num_frames
               trainImages_concat35((j-1)*(image_size)+1:j*(image_size),:,1,count) = grayim1(:,:);
              
         end
-%          imshow(trainImages_concat31(:,:,1,count));
-%          pause(2);
+
         count = count + 1;
 %  end
  
