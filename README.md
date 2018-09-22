@@ -8,7 +8,7 @@ https://drive.google.com/file/d/1dc2lzlr1m5eiwXTqoGWv8yC6cztuC_KQ/view?usp=shari
 
 Download 'all_stls.zip' file from the following link:
 
-
+https://drive.google.com/file/d/18UoeyLu8NizTe7pXfc7iYYoHXR9TF_LL/view?usp=sharing
 
 Unzip 'all_stls.zip' and place the folder into the root directory.
 
