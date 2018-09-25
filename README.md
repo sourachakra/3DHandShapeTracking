@@ -20,6 +20,6 @@ Order of running the files to obtain the results:
 
 3) Run "prepare_training_data1_concat.m" followed by "normalizeparams.m" to prepare data for training CNN from the low-dimensional space generated and the generated silhouettes.
 
-4) Run "learn_mapping.m" to train the CNN for pose estimation and test the network on test data to obtain the 3D mesh reconstruction. For testing the network, please provide the path to the trained model (saved in '.mat' format) i.e substitute the path in line "net1 = load('./checkpoint/gg8_more_sim_fit.mat');" in line 69 in file "learn_mapping.m" with the path to the trained model.
+4) Run "learn_mapping.m" to train the CNN for pose estimation and test the network on test data to obtain the 3D mesh reconstruction. For testing the network, please provide the path to the trained model (saved in '.mat' format) i.e substitute the path in line "net1 = load('./checkpoint/gg8_more_sim_fit.mat');" (line 69 in file "learn_mapping.m") with the path to the trained model.
 
 
